@@ -1,0 +1,40 @@
+@import 'src/scss/base/variables';
+@import 'src/scss/base/mixins';
+
+:host {
+  &.toggled {
+    .wrapper {
+      animation: show .2s;
+      transform: scale(1);
+    }
+  }
+
+  .wrapper {
+    background-color: $white;
+    border-radius: 10px;
+    max-width: 500px;
+    overflow: hidden;
+    width: 90vw;
+  }
+
+  .header {
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .text {
+    color: $grey;
+    font-weight: bold;
+    padding: 20px;
+    text-transform: uppercase;
+  }
+}

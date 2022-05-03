@@ -1,0 +1,26 @@
+<ul>
+  <ng-template [ngTemplateOutletContext]="{ $implicit: menuItem, level: 1 }" [ngTemplateOutlet]="recursive"></ng-template>
+</ul>
+
+
+<ng-template #recursive let-items let-level="level">
+  <li *ngFor="let item of items" [ngClass]="{'subs': item.subs, 'link': !item.subs?.length}">
+    <ng-template [ngTemplateOutletContext]="{ $implicit: item, level: level }" [ngTemplateOutlet]="item.subs ? subTpl : noSubTpl"></ng-template>
+  </li>
+</ng-template>
+
+
+<ng-template #subTpl let-item let-level="level">
+  <ng-container *ngIf="item.subs?.length">
+    <ul class="level-{{ level }}">
+      <li *ngIf="level > 1" [ngClass]="{'parent': level > 1 && item.subs?.length}">{{ item.name }}</li>
+
+      <ng-template [ngTemplateOutletContext]="{ $implicit: item.subs, level: (level + 1) }" [ngTemplateOutlet]="recursive"></ng-template>
+    </ul>
+  </ng-container>
+</ng-template>
+
+
+<ng-template #noSubTpl let-item>
+  <a class="item" routerLinkActive="active" [routerLink]="[item.url]" [queryParams]="item.params">{{ item.name }}</a>
+</ng-template>

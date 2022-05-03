@@ -1,0 +1,29 @@
+@import 'src/scss/base/variables';
+@import 'src/scss/base/mixins';
+
+:host {
+  display: none;
+  left: 20px;
+  position: fixed;
+  top: 20px;
+  z-index: zindex(top);
+
+  &.show {
+    display: block;
+  }
+
+  span {
+    cursor: pointer;
+    font-size: 40px;
+  }
+}
+
+@include tablet {
+  :host {
+    display: none;
+
+    &.show {
+      display: none;
+    }
+  }
+}

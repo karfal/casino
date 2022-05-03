@@ -1,0 +1,231 @@
+section.casino {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100vh;
+
+  h1 {
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    text-indent: -9999px;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .menu-item {
+    border-right: 1px solid $white-grey;
+  }
+
+  section {
+    &.casino-games {
+      @include gap(30px);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 30px;
+      width: 100%;
+
+      form {
+        @include gap(20px);
+        align-items: center;
+        background: linear-gradient(to right, map-get($form-gradient, light), map-get($form-gradient, dark));
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+        width: 100%;
+
+        input {
+          height: 30px;
+          padding: 5px;
+          width: calc(100% - 100px);
+        }
+
+        > button {
+          background-color: $secondary;
+          border: none;
+          border-radius: 5px;
+          color: $white;
+          cursor: pointer;
+          padding: 12px;
+          text-transform: uppercase;
+        }
+      }
+
+      provider-dropdown {
+        width: calc(100% - 100px);
+      }
+
+      .games {
+        @include gap(1px);
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1300px;
+
+        .casino-game {
+          flex: 0 0 auto;
+
+          &.hide {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.casino-game {
+      @include gap(20px);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 100px);
+      justify-content: center;
+      width: 100%;
+
+      h2 {
+        color: $primary;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 34px;
+      }
+
+      .wrapper {
+        height: 300px;
+        width: 300px;
+      }
+
+      .game {
+        box-shadow: 0 0 15px rgba($black, .1);
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+        width: 100%;
+      }
+
+      .wrapper:hover .game {
+        transform: rotateY(180deg);
+        transition: transform .5s;
+      }
+
+      img,
+      .text {
+        backface-visibility: hidden;
+        color: $primary;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      .text {
+        background: $primary;
+        color: $white;
+        text-align: center;
+        transform: rotateY(180deg);
+      }
+
+      h3 {
+        font-family: 'Lily Script One', sans-serif;
+        font-size: 22px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      a.game-link {
+        background-color: $secondary;
+        border-radius: 10px;
+        bottom: 10%;
+        color: $white;
+        font-size: 13px;
+        font-weight: bold;
+        left: 50%;
+        padding: 5px 25px;
+        position: absolute;
+        text-transform: uppercase;
+        transform: translate(-50%, 0);
+
+        &:last-of-type {
+          background-color: transparent;
+          bottom: -55px;
+          color: $primary;
+          font-size: 22px;
+          font-style: italic;
+          padding: 15px 0;
+          width: 100%;
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &.disabled {
+          background-color: $darker-grey;
+          pointer-events: none;
+
+          span {
+            display: none;
+          }
+
+          &::after {
+            content: 'unavailable';
+          }
+        }
+
+        &::before {
+          @include triangle(right, $white);
+          left: 90%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-90%, -50%);
+        }
+      }
+
+      .empty {
+        @include gap(10px);
+        align-items: center;
+        color: $primary;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px;
+        text-transform: capitalize;
+
+        a {
+          background-color: $secondary;
+          border-radius: 5px;
+          color: $white;
+          font-size: 14px;
+          padding: 5px 15px;
+          position: static;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  section.casino {
+    section.casino-games {
+      form {
+        @include gap(50px);
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px 10px;
+        width: calc(100% - 20px);
+
+        input {
+          max-width: 300px;
+        }
+      }
+
+      provider-dropdown {
+        width: 200px;
+      }
+    }
+  }
+}

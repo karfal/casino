@@ -1,0 +1,129 @@
+section.home {
+  background-color: $white;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+
+  h1 {
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    text-indent: -9999px;
+    visibility: hidden;
+    width: 0;
+  }
+
+  h2 {
+    font-weight: lighter;
+    width: 100%;
+  }
+
+  header {
+    @include gap(10px);
+    align-items: center;
+    background-color: $dirty-white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 115px;
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+
+    p {
+      text-align: center;
+      width: 100%;
+
+      &:first-of-type {
+        color: $primary;
+        font-family: 'Lily Script One', sans-serif;
+        font-size: 33px;
+      }
+
+      &:last-of-type {
+        font-size: 22px;
+
+      }
+    }
+
+    em:last-of-type {
+      i {
+        display: none;
+      }
+    }
+
+    a {
+      @include gap(4px);
+      align-items: center;
+      background-color: $secondary;
+      border-radius: 5px;
+      color: $white;
+      display: flex;
+      padding: 4px 10px;
+    }
+
+    object {
+      filter: invert(1);
+    }
+  }
+
+  .trending {
+    background-color: $white;
+  }
+
+  .last-played-games {
+    background-color: fade-out($secondary, .95);
+  }
+
+  .trending,
+  .last-played-games {
+    @include gap(20px);
+    align-items: center;
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+  }
+
+  last-played {
+    width: 100%;
+  }
+
+  .games {
+    @include gap(1px);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include tablet {
+  section.home {
+    header {
+      align-items: flex-start;
+
+      p {
+        text-align: left;
+
+        &:last-of-type {
+          width: 50%;
+        }
+      }
+    }
+
+    .trending,
+    .last-played-games {
+      text-align: unset;
+    }
+
+    .games {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

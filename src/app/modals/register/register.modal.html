@@ -1,0 +1,64 @@
+<div class="wrapper">
+  <div class="header">
+    <h3>register</h3>
+    <button (click)="close()">x</button>
+  </div>
+
+  <div class="form">
+
+    <form [formGroup]="formRegister" name="register" (submit)="register()">
+
+      <div [ngClass]="{'active': step === 'personal'}" class="form-group" formGroupName="personal">
+        <h3>personal</h3>
+
+        <div class="form-field">
+          <label for="username">username:</label>
+          <input class="form-control" formControlName="username" id="username" placeholder="username..." type="text">
+        </div>
+
+        <div class="form-field">
+          <label for="name">name:</label>
+          <input class="form-control" formControlName="name" id="name" placeholder="name..." type="text">
+        </div>
+
+        <div class="form-field">
+          <label for="surname">surname:</label>
+          <input class="form-control" formControlName="surname" id="surname" placeholder="surname..." type="text">
+        </div>
+
+        <div class="form-field">
+          <label for="gender">gender:</label>
+          <select class="form-control" formControlName="gender" id="gender">
+            <option value="select">select</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="birthday">birthday:</label>
+          <date formControlName="birthday" id="birthday"></date>
+        </div>
+
+        <div class="form-field">
+          <button (click)="navigate('summary')" type="button">next</button>
+        </div>
+      </div>
+
+      <div [ngClass]="{'active': step === 'summary'}" class="form-group">
+        <h3>summary</h3>
+
+        <ul>
+          <li *ngFor="let obj of (formRegister.get('personal')?.value | keyValue)" class="control-value"><span>{{obj.key}}:</span>&nbsp;<span>{{obj.value}}</span></li>
+        </ul>
+
+        <div class="form-field">
+          <button (click)="navigate('personal')" type="button">back</button>
+          <button type="submit">confirm</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,17 @@
+@import 'src/scss/base/variables';
+@import 'src/scss/base/mixins';
+
+:host {
+  @include gap(5px);
+  display: flex;
+  flex: 1 1 auto;
+
+  select {
+    border: 1px solid $darker-grey-white;
+    border-radius: 3px;
+    color: $grey;
+    flex: 1 1 auto;
+    padding: 6px 3px;
+    text-transform: capitalize;
+  }
+}

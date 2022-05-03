@@ -1,0 +1,65 @@
+html,
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: $black;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &.active {
+    color: $highlighted;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+form {
+  input,
+  select,
+  button {
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+button,
+.as-button {
+  background-color: $secondary;
+  border: none;
+  border-radius: 5px;
+  color: $white;
+  cursor: pointer;
+  padding: 5px 15px;
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none;
+}

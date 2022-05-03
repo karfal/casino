@@ -1,0 +1,9 @@
+<ng-container *ngIf="game">
+  <img [alt]="game.id" [src]="game.thumb?.url | imageSrc"/>
+
+  <div class="overlay">
+    <h3>{{ game.title }}</h3>
+    <a [routerLink]="['/casino/game']" [queryParams]="{id: game.id}" [ngClass]="{'disabled': !game.startUrl}"><span>Play for fun</span></a>
+    <a [routerLink]="['/casino/game']" [queryParams]="{id: game.id, mode: 'real'}" [ngClass]="{'disabled': !game.startUrl}"><span>Play for real</span></a>
+  </div>
+</ng-container>

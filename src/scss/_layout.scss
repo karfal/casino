@@ -1,0 +1,91 @@
+app-root {
+  color: $darker-grey;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Calibri, sans-serif;
+
+  nav {
+    background-color: $primary;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: zindex(nav);
+
+    ul {
+      @include gap(20px);
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      height: inherit;
+      justify-content: center;
+      position: fixed;
+      width: 100%;
+    }
+
+    li {
+      a {
+        color: $white;
+        font-family: 'Lily Script One', sans-serif;
+        font-size: 25px;
+        text-transform: uppercase;
+      }
+
+      &:last-of-type {
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .user {
+      color: $white;
+      font-family: 'Lily Script One', sans-serif;
+
+      button {
+        background-color: transparent;
+        margin-left: 5px;
+        padding: 0;
+      }
+    }
+
+    .register {
+      font-family: monospace, sans-serif;
+      font-size: 12px;
+    }
+  }
+
+  > section {
+    margin-top: 100px;
+  }
+
+  footer {
+    align-items: center;
+    background-color: $darker-grey;
+    color: $white;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  img[alt='logo'] {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@include tablet {
+  app-root {
+    nav {
+      li {
+        &:last-of-type {
+          position: absolute;
+          right: 5%;
+          top: 50%;
+          transform: translate(-5%, -50%);
+          width: auto;
+        }
+      }
+    }
+  }
+}

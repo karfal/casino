@@ -1,0 +1,75 @@
+@import 'src/scss/base/variables';
+@import 'src/scss/base/mixins';
+
+:host {
+  background-color: lighten($white-grey, 5%);
+  box-shadow: 0 0 10px $white-grey;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  position: fixed;
+  top: 100px;
+  transition: .5s;
+  width: 0;
+  z-index: zindex(base);
+
+  &.toggled {
+    width: 50%;
+  }
+
+  ul {
+    &.level-1 {
+      > li {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  li {
+    line-height: 1;
+    margin: 5px;
+
+    &:not(.parent) {
+      margin-bottom: 10px;
+    }
+
+    &.parent {
+      color: $secondary;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &::after {
+        content: ' - ';
+      }
+    }
+
+    &.link {
+      border-bottom: 1px solid $dirty-white;
+      display: block;
+      padding-bottom: 10px;
+    }
+
+    a {
+      color: $primary;
+      display: block;
+      font-size: 22px;
+
+      &.active {
+        color: $highlighted;
+      }
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+@include tablet {
+  :host {
+    box-shadow: none;
+    max-width: 250px;
+    min-width: 250px;
+    position: static;
+  }
+}

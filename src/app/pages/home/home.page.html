@@ -1,0 +1,21 @@
+<h1>Casino Games</h1>
+
+<header>
+	<p>Home to the worlds greatest titles of casino games!</p>
+	<p><em *ngFor="let game of games">{{game}}<i>,</i>&nbsp;</em> and many more!</p>
+	<a [routerLink]="['/casino/games']">Go on, play some
+		<object type="image/svg+xml" data="assets/images/emoji-wink.svg"></object>
+	</a>
+</header>
+
+<div class="trending">
+	<h2>Our List of Trending Games</h2>
+
+	<div class="games">
+		<casino-game *ngFor="let game of trending" [game]="game"></casino-game>
+	</div>
+</div>
+
+<div class="last-played-games">
+	<last-played></last-played>
+</div>

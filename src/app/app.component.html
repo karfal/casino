@@ -1,0 +1,23 @@
+<nav>
+  <ul>
+    <li *ngFor="let menu of mainMenu"><a routerLinkActive="active" [routerLink]="menu.url">{{ menu.name }}</a></li>
+    <li *ngIf="user; else noUser" class="user">Welcome! {{user.username}}
+      <button (click)="logOut()">(logout)</button>
+    </li>
+  </ul>
+</nav>
+
+<toggler></toggler>
+
+<router-outlet></router-outlet>
+
+<notice-modal></notice-modal>
+<register-modal></register-modal>
+
+<footer>
+  <p>All rights reserved</p>
+</footer>
+
+<ng-template #noUser>
+  <li><a class="as-button register" routerLink fragment="register">Register</a></li>
+</ng-template>

@@ -1,0 +1,16 @@
+// FONTS
+@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+@import 'https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap';
+
+// BASE
+@import 'scss/base/variables';
+@import 'scss/base/mixins';
+
+// MAIN
+@import 'scss/tags';
+@import 'scss/layout';
+
+// PAGES
+@import 'scss/pages/home';
+@import 'scss/pages/casino';
+@import 'scss/pages/error';

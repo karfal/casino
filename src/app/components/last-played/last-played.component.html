@@ -1,0 +1,13 @@
+<ng-container [ngTemplateOutlet]="games?.length ? gamesTemp : empty"></ng-container>
+
+<ng-template #gamesTemp>
+	<h2>last played games</h2>
+
+	<div class="games">
+		<casino-game *ngFor="let game of games" [game]="game"></casino-game>
+	</div>
+</ng-template>
+
+<ng-template #empty>
+	<p>whoops.... seems like you didn't play any games yet</p> <img alt="frown" src="assets/images/emoji-frown.svg">
+</ng-template>

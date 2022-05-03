@@ -1,0 +1,12 @@
+section.error {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 20px;
+  width: 100%;
+
+	h2 {
+		color: $error;
+	}
+}

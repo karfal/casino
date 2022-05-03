@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup">
+  <input type="text" formControlName="search" placeholder="Search game or provider...">
+
+  <provider-dropdown [providers]="providers"></provider-dropdown>
+
+  <button type="button" (click)="clearProviders()">Clear Providers</button>
+</form>
+
+<ng-container [ngTemplateOutlet]="activeGames() ? gamesList : empty"></ng-container>
+
+<ng-template #gamesList>
+  <div class="games">
+    <casino-game *ngFor="let game of games; trackBy: trackByFunction" [game]="game" [ngClass]="{'hide': game.hide}"></casino-game>
+  </div>
+</ng-template>
+
+
+<ng-template #empty>
+  <h2>No games found...</h2>
+</ng-template>

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "casino",
+    "expanded": true,
+    "subs": [
+      {
+        "name": "hot",
+        "expanded": false,
+        "subs": [
+          {
+            "name": "Holmes and The Stolen Stones",
+            "url": "/casino/game",
+            "params": {
+              "id": "yggdrasil_holmes-and-the-stolen-stones"
+            }
+          },
+          {
+            "name": "Madame Destiny Megaways",
+            "url": "/casino/game",
+            "params": {
+              "id": "pragmatic_pragmatic-play_madame-destiny-megaways"
+            }
+          },
+          {
+            "name": "The Dog House",
+            "url": "/casino/game",
+            "params": {
+              "id": "pragmatic_the-dog-house"
+            }
+          },
+          {
+            "name": "Release the Kraken",
+            "url": "/casino/game",
+            "params": {
+              "id": "pragmatic_release-the-kraken"
+            }
+          },
+          {
+            "name": "Kluster Krystals Megaclusters",
+            "url": "/casino/game",
+            "params": {
+              "id": "relax_relax-gaming_kluster-krystals-megaclusters"
+            }
+          },
+          {
+            "name": "Red Temple II",
+            "url": "/casino/game",
+            "params": {
+              "id": "relax_fuga-red-temple-ii"
+            }
+          }
+        ]
+      },
+      {
+        "name": "trending",
+        "expanded": false,
+        "subs": [
+          {
+            "name": "3 Coins: Hold and Win",
+            "url": "/casino/game",
+            "params": {
+              "id": "booongo_booongo_3-coins-hold-and-win"
+            }
+          },
+          {
+            "name": "Nero's Fortune",
+            "url": "/casino/game",
+            "params": {
+              "id": "quickspin_quickspin-nero-s-fortune"
+            }
+          },
+          {
+            "name": "9kYeti",
+            "url": "/casino/game",
+            "params": {
+              "id": "yggdrasil_9kyeti"
+            }
+          },
+          {
+            "name": "Caribbean Anne",
+            "url": "/casino/game",
+            "params": {
+              "id": "oryx_kalamba-games_caribbean-annes"
+            }
+          },
+          {
+            "name": "Tome of Madness",
+            "url": "/casino/game",
+            "params": {
+              "id": "playngo_tome-of-madness"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

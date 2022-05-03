@@ -1,0 +1,33 @@
+// Z-INDEX LIST
+$zindex-list: base overlay nav top modal;
+
+// BREAKPOINTS
+$tablet-breakpoint: 768px;
+$small-desktop-breakpoint: 1024px;
+$desktop-breakpoint: 1280px;
+
+// COLORS
+$primary: #4F819C;
+$secondary: #CF8A8A;
+
+$white: #FFF;
+$white-grey: #EFEFEF;
+$dirty-white: #F5F5F5;
+$grey-white: #EEE;
+$darker-grey-white: #E0E0E0;
+
+$error: #C52525;
+
+$black: #000;
+
+$darker-grey: #2A2A2A;
+$dark-grey: #383838;
+$grey: #757575;
+$lighter-grey: #E1E1E1;
+
+$highlighted: lighten($secondary, 20%);
+
+$form-gradient: (
+  light: darken($white, 10%),
+  dark: $darker-grey-white
+);

@@ -1,0 +1,118 @@
+@import 'src/scss/base/variables';
+@import 'src/scss/base/mixins';
+
+:host {
+  &.toggled {
+    .wrapper {
+      animation: show .2s;
+      transform: scale(1);
+    }
+  }
+
+  .wrapper {
+    background-color: $white;
+    border-radius: 10px;
+    max-width: 500px;
+    overflow: hidden;
+    width: 90vw;
+  }
+
+  .header {
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5px 5px 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .form-group {
+    @include gap(5px);
+    color: $dark-grey;
+    display: none;
+    flex-direction: column;
+    padding: 5px 20px 10px;
+
+    &.active {
+      display: flex;
+    }
+
+    &:first-of-type {
+      .form-field {
+        &:last-of-type {
+          button {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+
+    &:not(:first-of-type) {
+      .form-field {
+        &:last-of-type {
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .form-field {
+      @include gap(5px);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    label {
+      color: $dark-grey;
+      display: inline-block;
+      min-width: 75px;
+      text-transform: capitalize;
+    }
+
+    .form-control {
+      border: 1px solid $darker-grey-white;
+      border-radius: 3px;
+      color: $grey;
+      flex: 1 1 auto;
+      padding: 6px 3px;
+    }
+
+    .control-value {
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $darker-grey-white;
+      }
+
+      span {
+        &:first-of-type {
+          color: $grey;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        &:last-of-type {
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  :host {
+    .form-group {
+      .form-field {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+  }
+}

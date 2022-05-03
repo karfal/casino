@@ -1,0 +1,31 @@
+<ng-container [ngTemplateOutlet]="game ? gameTmp : empty"></ng-container>
+
+
+<ng-template #gameTmp>
+  <h2>Try your Luck!</h2>
+
+  <div *ngIf="game" class="wrapper">
+    <div class="game">
+      <img [alt]="game.thumb?.title" [src]="game.thumb?.url | imageSrc"/>
+
+      <div class="text">
+        <h3>{{game.title}}</h3>
+
+        <a class="game-link" [href]="game.startUrl" (click)="played(game.id)" [ngClass]="{'disabled': !game.startUrl}">
+          <span *ngIf="!isReal">Play for Fun</span>
+          <span *ngIf="isReal">Play for Real</span>
+        </a>
+
+        <a class="game-link" [routerLink]="['../']">...Or try something else</a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #empty>
+  <div class="empty">
+    <span>game unavailable</span>
+    <a class="link" [routerLink]="['../']">go back...</a>
+  </div>
+</ng-template>
